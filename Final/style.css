@@ -12,7 +12,7 @@ body{
 }
 /*definições básicas para todas as secções*/ 
 .secao{
-    padding: 100px 90px;
+    padding: 100px 150px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -398,6 +398,7 @@ header img {
     font-size: 0.9rem;
     transition: 0.2s;
 }
+
 /* ====== Secção Actividades ====== */
 .actividades {
   padding: 40px;
