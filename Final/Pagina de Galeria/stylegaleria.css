@@ -18,6 +18,32 @@ body {
 }
 
 
+.botao-voltar{
+    position: fixed;
+    top: 90px;
+    left: 95rem;
+    z-index: 9999;
+    background: #2563EB;
+    color: white;
+
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
+    transition: 0.3s;
+}
+
+.botao-voltar:hover{
+    background:#1e4fd1;
+    transform: translateY(-2px);
+}
 
 /*Header Estilização*/
 header {
@@ -221,4 +247,116 @@ h3 {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.85rem;
     color: #a0aec0;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+/* Para tablets e telas médias */
+@media screen and (max-width: 1024px) {
+
+    /* Sidebar vira horizontal ou topo */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        padding: 15px 20px;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .sidebar li {
+        margin-bottom: 0;
+    }
+
+    .conteudo-principal {
+        padding: 30px 20px;
+    }
+
+    .bento-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 200px;
+    }
+
+}
+
+/* Para tablets pequenos e mobile (até 768px) */
+@media screen and (max-width: 768px) {
+
+    /* Navbar e botao voltar */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .botao-voltar {
+        left: 20px;
+        top: 80px;
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    /* Sidebar vira menu superior collapsível */
+    .sidebar {
+        display: none; /* esconder sidebar lateral */
+    }
+
+    .conteudo-principal {
+        padding: 20px 10px;
+    }
+
+    /* Bento-grid */
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 150px;
+        gap: 15px;
+    }
+
+}
+
+/* Para mobile pequeno (até 480px) */
+@media screen and (max-width: 480px) {
+
+    header img {
+        width: 40px;
+    }
+
+    header a {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    .conteudo-principal {
+        padding: 15px 10px;
+    }
+
+    .bento-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 180px;
+        gap: 12px;
+    }
+
+    .foto-item img {
+        object-fit: cover; /* garante que a imagem se ajuste */
+    }
+
+    .botao-voltar {
+        top: 70px;
+        left: 10px;
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+
+    /* Footer */
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
 }

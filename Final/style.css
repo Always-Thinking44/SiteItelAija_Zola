@@ -9,7 +9,10 @@
 
 body{
     background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
+
 /*definições básicas para todas as secções*/ 
 .secao{
     padding: 80px 150px;
@@ -48,6 +51,8 @@ html {
 
 
 
+/* ===== HEADER ===== */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -60,19 +65,82 @@ header {
     z-index: 1000;
 }
 
-header a {
-    text-decoration: none;
-    padding: 10px;
-    color: #0f172a;
-    font-weight: 500;
-}
+/* Logo */
 
 header img {
     width: 50px;
-    display: inline;
 }
 
+/* NAV */
 
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Links */
+
+header a {
+    text-decoration: none;
+    padding: 10px 12px;
+    color: #0F172A;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+header a:hover {
+    color: #2563EB;
+}
+
+/* ===== DROPDOWN ===== */
+
+.dropdown {
+    position: relative;
+}
+
+/* Menu escondido */
+
+.dropdown-menu {
+    position: absolute;
+    top: 40px;
+    left: 0;
+
+    background: #FFFFFF;
+    min-width: 180px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border-radius: 8px;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+
+    transition: 0.3s ease;
+}
+
+/* Links do dropdown */
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: #0F172A;
+}
+
+/* Hover nos links */
+
+.dropdown-menu a:hover {
+    background: #F4F4F4;
+    color: #2563EB;
+}
+
+/* Mostrar dropdown */
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
 
 
 
@@ -304,6 +372,7 @@ header img {
   padding:50px;
   background:#F4F4F4;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  justify-items: center;
   
 }
 
@@ -344,6 +413,7 @@ header img {
 .curso-slide:hover{
   transform:translateY(-5px);
   box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  cursor: pointer;
 }
 
 .curso-slide img{
@@ -409,11 +479,13 @@ header img {
 }
 
 .modal-conteudo-curso img{
-  width:100%;
-  height:300px;
-  object-fit:cover;
-  border-radius:8px;
-  margin-bottom:20px;
+    width: 100%;          /* ocupa toda a largura disponível */
+  max-height: 400px;    /* não fica gigantesca verticalmente */
+  height: auto;         /* mantém proporção natural */
+  object-fit: cover;    /* corta se necessário para preencher a largura */
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: block;
 }
 
 .modal-conteudo-curso h2{
@@ -528,164 +600,6 @@ header img {
     font-weight: bold;
     font-size: 0.9rem;
     transition: 0.2s;
-}
-
-
-
-
-
-
-
-/* ====== Secção Actividades ====== */
-
-.actividades {
-  padding: 40px;
-  text-align: center;
-  background-color: #F4F4F4;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.actividades h1 {
-  color: #0F172A;
-  margin-bottom: 40px;
-}
-
-/* ====== Cards ====== */
-.cards-container {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.card {
-  background: #FFFFFF;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  width: 200px;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s;
-  opacity: 0;
-  transform: scale(0.8);
-}
-
-.card img {
-  width: 100%;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-.card h3 {
-  color: #2563EB;
-  margin: 10px 0 5px;
-}
-
-.card p {
-  color: #64748B;
-  font-size: 14px;
-  padding: 0 10px 10px;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-/* ====== Modal ====== */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.7);
-}
-
-.modal-content {
-  background-color: #FFFFFF;
-  margin: 10% auto;
-  padding: 20px;
-  border-radius: 10px;
-  width: 80%;
-  max-width: 800px;
-  animation: zoomIn 0.4s ease;
-  text-align: center;
-}
-
-.modal-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 150px);
-  gap: 15px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.modal-gallery img {
-  width: 100%;
-  border-radius: 5px;
-}
-
-.close {
-  color: #0F172A;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close:hover {
-  color: #2563EB;
-}
-
-/* ====== Animação ====== */
-@keyframes zoomIn {
-  0% { transform: scale(0.8); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
-/* Hover zoom na galeria */
-.modal-gallery img {
-  width: 100%;
-  border-radius: 5px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-}
-
-.modal-gallery img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
-
-/* Lightbox */
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.9);
-  justify-content: center;
-  align-items: center;
-}
-
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.close-lightbox {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: #FFFFFF;
-  font-size: 36px;
-  cursor: pointer;
 }
 
 .pagina-noticias{
@@ -836,7 +750,106 @@ color:#333;
 }
 
 
+/* ====== Secção Actividades ====== */
+/* ===== Secção ===== */
 
+.actividades{
+    padding:60px 20px;
+    background:#F4F4F4;
+    text-align:center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.actividades h2{
+    color:#0F172A;
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#64748B;
+    margin-bottom:40px;
+}
+
+
+/* ===== Carrossel ===== */
+
+.carousel{
+    width:100%;
+    overflow:hidden;
+    position:relative;
+}
+
+
+/* ===== Container dos cards ===== */
+
+.cards-container{
+    display:flex;
+    gap:30px;
+    width:max-content;
+    animation: slideLeft 35s linear infinite;
+}
+
+
+/* ===== Cards ===== */
+
+.card{
+    width:260px;
+    background:#FFFFFF;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    transition:transform 0.5s, opacity 0.5s;
+    flex-shrink:0;
+    opacity:0.6;
+}
+
+
+/* Card principal quando passa no centro */
+
+.card:hover{
+    transform:scale(1.08);
+    opacity:1;
+}
+
+
+/* ===== Imagem ===== */
+
+.card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    border-top-left-radius:12px;
+    border-top-right-radius:12px;
+}
+
+
+/* ===== Texto ===== */
+
+.card h3{
+    color:#2563EB;
+    margin:12px 10px 6px;
+}
+
+.card p{
+    color:#64748B;
+    font-size:14px;
+    padding:0 10px 15px;
+}
+
+
+/* ===== Movimento horizontal ===== */
+
+@keyframes slideLeft{
+
+    0%{
+        transform:translateX(0);
+    }
+
+    100%{
+        transform:translateX(-50%);
+    }
+
+}
 
 /*Parceiros*/
 
@@ -972,7 +985,7 @@ color:#333;
     background-color: #ffff;
     left: 50%;
     margin-left: -3px;
-    animation: moveline 6s linear forwards;
+    animation: moveline 5s linear forwards;
 }
 
 
@@ -1117,4 +1130,258 @@ color:#333;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.85rem;
     color: #a0aec0;
+}
+/* =================== RESPONSIVIDADE =================== */
+
+/* ----- Telas até 1200px (Laptops grandes / Tablets landscape) ----- */
+@media screen and (max-width: 1200px) {
+    .secao {
+        padding: 60px 100px;
+    }
+
+    .bento-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 220px;
+    }
+
+    .carousel-wrapper {
+        justify-content: flex-start;
+        padding: 10px;
+    }
+
+    .cards-container {
+        gap: 25px;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .timeline {
+        max-width: 95%;
+    }
+}
+
+/* ----- Telas até 992px (Tablets) ----- */
+@media screen and (max-width: 992px) {
+    .secao {
+        padding: 50px 50px;
+    }
+
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 200px;
+    }
+
+    .cursos-carousel {
+        padding: 30px 20px;
+    }
+
+    .carousel-wrapper {
+        gap: 15px;
+        padding-bottom: 10px;
+    }
+
+    .curso-slide {
+        flex: 0 0 240px;
+    }
+
+    .cards-container {
+        gap: 20px;
+    }
+
+    .card {
+        width: 220px;
+    }
+
+    .timeline {
+        margin: 70px auto;
+    }
+
+    .container {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 20px;
+    }
+
+    .text-box {
+        font-size: 14px;
+        padding: 15px 20px;
+    }
+
+    .text-box small {
+        margin-bottom: 8px;
+    }
+
+    .left-container-arrow,
+    .right-container-arrow {
+        top: 25px;
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+        border-left: 12px solid white;
+        right: -12px;
+    }
+
+    .right-container-arrow {
+        left: -12px;
+        border-left: 0;
+        border-right: 12px solid white;
+    }
+
+    .botao-voltar {
+        top: 70px;
+        left: auto;
+        right: 20px;
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+/* ----- Telas até 768px (Tablets / Mobile) ----- */
+@media screen and (max-width: 768px) {
+    .secao {
+        padding: 40px 30px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    header nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .bento-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 180px;
+    }
+
+    .carousel-wrapper {
+        overflow-x: scroll;
+        justify-content: flex-start;
+    }
+
+    .curso-slide {
+        flex: 0 0 200px;
+    }
+
+    .cards-container {
+        gap: 15px;
+    }
+
+    .card {
+        width: 200px;
+    }
+
+    .timeline::after {
+        left: 20px;
+    }
+
+    .container {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 15px;
+    }
+
+    .right-container {
+        left: 0 !important;
+    }
+
+    .left-container img,
+    .right-container img {
+        left: 10px;
+        width: 60px;
+    }
+
+    .left-container-arrow,
+    .right-container-arrow {
+        left: -10px;
+        border-left: 0;
+        border-right: 10px solid white;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+    }
+
+    .botao-voltar {
+        top: auto;
+        bottom: 20px;
+        right: 15px;
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-nav ul li {
+        display: inline-block;
+        margin: 5px 10px;
+    }
+}
+
+/* ----- Telas até 480px (Mobile) ----- */
+@media screen and (max-width: 480px) {
+    .secao {
+        padding: 30px 15px;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    header nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .card {
+        width: 180px;
+    }
+
+    .curso-slide {
+        flex: 0 0 180px;
+    }
+
+    .bento-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 150px;
+    }
+
+    .timeline {
+        margin: 50px auto;
+    }
+
+    .container {
+        padding-left: 40px;
+    }
+
+    .text-box {
+        font-size: 13px;
+        padding: 10px 15px;
+    }
+
+    .left-container img,
+    .right-container img {
+        width: 50px;
+    }
+
+    .botao-voltar {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .footer-container {
+        gap: 20px;
+    }
 }

@@ -1,200 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITEL - Notícias</title>
+    <meta name="Author" content="Aijá Gourgel e Zola Bento">
     <link rel="shortcut icon" href="../imagens/image.png" type="image/x-icon">
-    <link rel="stylesheet" href="../style.css">
+  <title>Página de Notícias ITEL</title>
+  <link rel="stylesheet" href="noticias.css">
 </head>
 <body>
-    <header>
-        <div>
-            <img src="../imagens/image.png" alt="Imagem do itel">
-            
-        </div>
-        <nav>
-            <a href="../index.html">Início</a>
-            <a href="cursos/cursos.html">Cursos</a>
-            <a href="#contacto">Contacto</a>
-            <a href="../Login.html">Login</a>
-            <a href="#noticias.html">Noticia</a>
-        </nav>
-    </header>
+  <button class="botao-voltar" onclick="history.back()">
+    ← Voltar
+</button>
+     <header id="home">
 
+    <div>
+        <img src="../imagens/image.png" alt="Imagem do ITEL">
+    </div>
 
-    <section class="pagina-noticias">
+    <nav>
 
-        <div class="topo-noticias">
-            <h1>Notícias do ITEL</h1>
-            <a href="../index.html#noticia" class="voltar">← Voltar</a>
-        </div>
+        <a href="index.html#home">Home</a>
 
-        <div class="cards-noticias">
+        <div class="dropdown">
+            <a href="#">Sobre ▾</a>
 
-            <div class="card-noticia">
-            <img src="imgNoticias/iena.jpg">
-            <h3>ITEL conquista medalhas na IENA</h3>
-            <p>Estudantes representam Angola...</p>
-            <span class="saber-mais" data-id="0">saber mais</span>
+            <div class="dropdown-menu">
+                <a href="../index.html#galeria">Galeria</a>
+                <a href="../index.html#cursos">Cursos</a>
+                <a href="../index.html#noticias">Notícias</a>
+                <a href="../index.html#actividades">Actividades</a>
+                <a href="../index.html#diretores">Directores</a>
+                <a href="../index.html#parceiros">Parceiros</a>
+
+            </div>
         </div>
 
-        <div class="card-noticia">
-            <img src="imgNoticias/fititel.jpg">
-            <h3>FITITEL apresenta projetos inovadores</h3>
-            <p>Feira tecnológica reúne talentos...</p>
-            <span class="saber-mais" data-id="1">saber mais</span>
+        <a href="../index.html#contacto">Contacto</a>
+        <a href="../Login/Login.html">Login</a>
+
+    </nav>
+
+</header>
+
+  <h1>Página de Notícias ITEL</h1>
+
+  <div class="noticia" id="noticia1">
+    <aside class="noticia-img">
+      <img src="../Pagina de Galeria/GaleriaDeImagens/42 4.jpeg" alt="Evento Tecnológico">
+    </aside>
+    <aside class="noticia-conteudo">
+      <h2>Evento Tecnológico - Parceria</h2>
+      <h3>04 Março, 2026</h3>
+      <p>ITEL recebe a apresentação oficial da Escola 42 Luanda. A Escola 42 Luanda escolheu o ITEL como primeira instituição a receber a apresentação oficial do seu programa de formação. O evento contou com apresentações detalhadas do programa de formação, esclarecimentos sobre os cursos e uma sessão de perguntas e respostas para os estudantes interessados.</p>
+    </aside>
+  </div>
+
+  <hr>
+
+  <div class="noticia" id="noticia2">
+    <aside class="noticia-img">
+      <img src="../Pagina de Galeria/GaleriaDeImagens/Africa Fevereiro6.jpeg" alt="Formatura Institucional">
+    </aside>
+    <aside class="noticia-conteudo">
+      <h2>Formatura Institucional</h2>
+      <h3>02 Março, 2026</h3>
+      <p>ITEL volta a encher-se de cor. Panos Africanos Semakakas, tecidos tradicionais e acessórios culturais tomaram conta das salas de aula e dos departamentos do ITEL. Estudantes e professores participaram numa cerimônia vibrante, celebrando a conclusão de mais um ciclo letivo e reforçando a cultura e identidade local dentro da instituição.</p>
+    </aside>
+  </div>
+
+  <hr>
+
+  <div class="noticia" id="noticia3">
+    <aside class="noticia-img">
+      <img src="../Pagina de Galeria/GaleriaDeImagens/DreamSpace Itel2.jpeg" alt="Premiação Desporto">
+    </aside>
+    <aside class="noticia-conteudo">
+      <h2>Premiação Desporto</h2>
+      <h3>01 Março, 2026</h3>
+      <p>ITEL goleia e garante qualificação à próxima fase. O ITEL protagonizou, neste domingo, uma das exibições mais expressivas do torneio ao golear a Rádio Eclesia por 9-1. Esta vitória reforçou a posição da equipa do ITEL como favorita do campeonato, mostrando talento, espírito de equipa e dedicação ao desporto estudantil.</p>
+    </aside>
+  </div>
+<footer class="footer-itel">
+        <div class="footer-container">
+            <div class="footer-info">
+                <img src="../imagens/image.png" alt="Logo ITEL" class="footer-logo">
+                <p>Instituto de Telecomunicações</p>
+                <p><i>"Poucos Mas Bons!"</i></p>
+            </div>
+
+            <div class="footer-nav">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="../index.html#cursos">Cursos</a></li>
+                    <li><a href="../index.html#noticia">Notícias</a></li>
+                    <li><a href="../Login/Login.html">Portal do Aluno</a></li>
+                </ul>
+            </div>
+
+            <div id="contacto" class="footer-contact">
+                <h4>Contactos</h4>
+                <p><b>Endereço:</b> Luanda, Município do Rangel, bairro CTT KM-7</p>
+                <p><b>Telefone I: </b>+244 931 313 333</p>
+                <p><b>Telefone II: </b>+244 940 747 200</p>
+                <p><b>Email:</b> secretariaitel@hotmail.com </p>
+            </div>
         </div>
-
-        <div class="card-noticia">
-            <img src="imgNoticias/semana.jpg">
-            <h3>Semana da Informática</h3>
-            <p>Estudantes mostram soluções digitais...</p>
-            <span class="saber-mais" data-id="2">saber mais</span>
+        <div class="footer-copyright">
+            &copy; 2026 ITEL - Todos os direitos reservados. 
+            <br>Desenvolvido por Aijá Gourgel e Zola Bento.
         </div>
-
-        <div class="card-noticia">
-            <img src="imgNoticias/semanaMu.jpg">
-            <h3>Semana da Multimédia</h3>
-            <p>Projetos criativos são apresentados...</p>
-            <span class="saber-mais" data-id="3">saber mais</span>
-        </div>
-
-        <div class="card-noticia">
-            <img src="imgNoticias/capsemanaeele.jpg">
-            <h3>Semana da Electrónica</h3>
-            <p>Robótica e automação em destaque...</p>
-            <span class="saber-mais" data-id="4">saber mais</span>
-        </div>
-
-        <div class="card-noticia">
-            <img src="imgNoticias/sok.jpg">
-            <h3>ITEL Solidário</h3>
-            <p>Ações sociais na comunidade...</p>
-            <span class="saber-mais" data-id="5">saber mais</span>
-        </div>
-
-        <div class="card-noticia">
-            <img src="imgNoticias/fut.jpg">
-            <h3>Torneio de Futebol do ITEL</h3>
-            <p>Competição entre estudantes...</p>
-            <span class="saber-mais" data-id="6">saber mais</span>
-        </div>
-
-        <div class="card-noticia">
-            <img src="imgNoticias/Amor.jpg">
-            <h3>Sextas Culturais</h3>
-            <p>Cultura e entretenimento...</p>
-            <span class="saber-mais" data-id="7">saber mais</span>
-        </div>
-
-        <div class="card-noticia">
-            <img src="imgNoticias/robo.jpg">
-            <h3>Projetos de Robótica</h3>
-            <p>Estudantes desenvolvem robôs...</p>
-            <span class="saber-mais" data-id="8">saber mais</span>
-        </div>
-
-        <div class="card-noticia">
-            <img src="imgNoticias/electr.jpeg">
-            <h3>Inovação em Telecomunicações</h3>
-            <p>Novos sistemas são apresentados...</p>
-            <span class="saber-mais" data-id="9">saber mais</span>
-        </div>
-
-        <div class="card-noticia">
-            <img src="imgNoticias/magui.jpg">
-            <h3>Hackathon Tecnológico</h3>
-            <p>Programadores criam soluções...</p>
-            <span class="saber-mais" data-id="10">saber mais</span>
-        </div>
-
-        <div class="card-noticia">
-            <img src="imgNoticias/redes.jpg">
-            <h3>Formação em Redes</h3>
-            <p>Treinamento técnico avançado...</p>
-            <span class="saber-mais" data-id="11">saber mais</span>
-        </div>
-
-        <div class="card-noticia">
-            <img src="imgNoticias/laboartorios.jpeg">
-            <h3>Laboratórios Modernizados</h3>
-            <p>Novos equipamentos chegam...</p>
-            <span class="saber-mais" data-id="12">saber mais</span>
-        </div>
-
-        <div class="card-noticia">
-            <img src="imgNoticias/setudantesPremiados.jpg">
-            <h3>Estudantes premiados</h3>
-            <p>Reconhecimento académico...</p>
-            <span class="saber-mais" data-id="13">saber mais</span>
-        </div>
-
-        <div class="card-noticia">
-            <img src="imgNoticias/ftura.jpg">
-            <h3>Semana da Tecnologia</h3>
-            <p>Eventos e palestras...</p>
-            <span class="saber-mais" data-id="14">saber mais</span>
-        </div>
-
-        <div class="card-noticia">
-            <img src="imgNoticias/electr.jpeg">
-            <h3>Novos cursos tecnológicos</h3>
-            <p>ITEL amplia formação...</p>
-            <span class="saber-mais" data-id="15">saber mais</span>
-        </div>
-
-        <div class="card-noticia">
-            <img src="imgNoticias/taag.jpg">
-            <h3>Parcerias com empresas</h3>
-            <p>Estágios e oportunidades...</p>
-            <span class="saber-mais" data-id="16">saber mais</span>
-        </div>
-
-        <div class="card-noticia">
-            <img src="imgNoticias/ia.jpg">
-            <h3>Projeto de Inteligência Artificial</h3>
-            <p>Estudantes exploram IA...</p>
-            <span class="saber-mais" data-id="17">saber mais</span>
-        </div>
-
-        <div class="card-noticia">
-            <img src="imgNoticias/eventos.jpg">
-            <h3>Eventos académicos</h3>
-            <p>Conferências e debates...</p>
-            <span class="saber-mais" data-id="18">saber mais</span>
-        </div>
-
-        <div class="card-noticia">
-            <img src="imgNoticias/fut.jpg">
-            <h3>Futuro da tecnologia</h3>
-            <p>Discussão sobre inovação...</p>
-            <span class="saber-mais" data-id="19">saber mais</span>
-        </div>
-
-        </div>
-
-
-        <!-- MODAL -->
-
-        <div class="modal-noticia" id="modal">
-
-        <div class="modal-conteudo">
-
-        <span class="fechar">&times;</span>
-
-        <img id="modal-img">
-
-        <h2 id="modal-titulo"></h2>
-
-        <p id="modal-texto"></p>
-
-        </div>
-
-        </div>
-
-        <script src="noticias.js"></script>
-
-</section>
+    </footer>
 </body>
 </html>
